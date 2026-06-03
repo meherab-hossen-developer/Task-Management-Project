@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7CCB12"/>
+      <stop offset="100%" stop-color="#2FC65C"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#006B43"/>
+      <stop offset="100%" stop-color="#5FCB3C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background only -->
+  <rect width="1024" height="1024" rx="180" fill="#FFFFFF"/>
+
+  <!-- Logo centered -->
+  <g transform="translate(0,0)">
+    <path d="M300 300 C340 220 420 180 520 180 L700 180 C760 180 800 220 800 280
+             C800 340 760 380 700 380 L520 380 C430 380 360 450 360 560
+             L360 600 C360 760 470 860 620 860"
+          fill="none" stroke="url(#g1)" stroke-width="90"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M760 620 C700 760 560 860 410 820 C260 780 190 620 240 470
+             C290 320 420 250 560 260"
+          fill="none" stroke="url(#g2)" stroke-width="90"
+          stroke-linecap="round"/>
+
+    <circle cx="470" cy="440" r="20" fill="#6FBE19"/>
+    <circle cx="470" cy="530" r="20" fill="#6FBE19"/>
+    <circle cx="470" cy="620" r="20" fill="#6FBE19"/>
+
+    <rect x="530" y="420" width="170" height="28" rx="14" fill="#006B43"/>
+    <rect x="530" y="510" width="170" height="28" rx="14" fill="#006B43"/>
+    <rect x="530" y="600" width="140" height="28" rx="14" fill="#006B43"/>
+
+    <path d="M520 720 L610 800 L810 560"
+          fill="none" stroke="url(#g1)" stroke-width="70"
+          stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="760" cy="360" r="34" fill="#B5D400"/>
+  </g>
+</svg>
