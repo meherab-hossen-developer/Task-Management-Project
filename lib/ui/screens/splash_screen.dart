@@ -30,8 +30,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ScreenBackground(
-        child: Center(child: SvgPicture.asset(AssetPaths.logoSVG, height: 200)),
+      backgroundColor: Colors.white,
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(AssetPaths.logoSVG, height: 200),
+            Text('Task Manager',style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w600
+            ),),
+          ],
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_management_project/ui/widgets/screen_background.dart';
 
@@ -27,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 86),
                 Text(
                   'Get Started With',
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.titleLarge
                 ),
                 const SizedBox(height: 24),
                 TextFormField(
@@ -37,19 +38,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 8),
                 TextFormField(
                   controller: _passTEController,
-                  decoration: InputDecoration(hintText: 'Password'),
+                  decoration: InputDecoration(
+                      hintText: 'Password',
+                    suffixIcon: Icon(Icons.visibility)
+                  ),
                   obscureText: true,
                 ),
                 const SizedBox(height: 24),
                 FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    fixedSize: Size.fromWidth(double.maxFinite),
-                    padding: EdgeInsets.all(16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
                   onPressed: () {},
                   child: Icon(Icons.arrow_circle_right_rounded),
                 ),
@@ -75,6 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             TextSpan(
                               text: 'Sign Up',
                               style: TextStyle(color: Colors.green),
+                              recognizer: TapGestureRecognizer()..onTap = () {
+
+                              },
                             ),
                           ],
                         ),
@@ -88,5 +87,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+  @override
+  void dispose() {
+    _emailTEController.dispose();
+    _passTEController.dispose();
+    super.dispose();
   }
 }
