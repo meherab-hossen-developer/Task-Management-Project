@@ -9,7 +9,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _passTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -33,29 +32,54 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 24),
                 TextFormField(
                   controller: _emailTEController,
-                  decoration: InputDecoration(
-                    hintText: 'Email',
-                  ),
+                  decoration: InputDecoration(hintText: 'Email'),
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
                   controller: _passTEController,
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                  ),
+                  decoration: InputDecoration(hintText: 'Password'),
                   obscureText: true,
                 ),
                 const SizedBox(height: 24),
                 FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    fixedSize: Size.fromWidth(double.maxFinite),
+                    padding: EdgeInsets.all(16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
                   onPressed: () {},
                   child: Icon(Icons.arrow_circle_right_rounded),
                 ),
-                TextButton(onPressed: () {}, child: Text('Forgot Password?')),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(color: Colors.black),
-                    text: "Don't have an account? ",
-                    children: [TextSpan(text: 'Sign Up')],
+                const SizedBox(height: 30),
+                Center(
+                  child: Column(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          text: "Don't have an account? ",
+                          children: [
+                            TextSpan(
+                              text: 'Sign Up',
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
