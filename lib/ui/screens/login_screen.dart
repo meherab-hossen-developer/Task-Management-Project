@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:task_management_project/ui/widgets/screen_background.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,6 +11,47 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: ScreenBackground(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 86),
+              Text(
+                'Get Started With',
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(height: 24),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                ),
+              ),
+              const SizedBox(height: 8),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                ),
+              ),
+              const SizedBox(height: 24),
+              FilledButton(
+                onPressed: () {},
+                child: Icon(Icons.arrow_circle_right_rounded),
+              ),
+              TextButton(onPressed: () {}, child: Text('Forgot Password?')),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(color: Colors.black),
+                  text: "Don't have an account? ",
+                  children: [TextSpan(text: 'Sign Up')],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

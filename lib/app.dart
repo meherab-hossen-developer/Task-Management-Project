@@ -7,6 +7,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          fillColor: Colors.white,
+          filled: true,
+          hintStyle: TextStyle(color: Colors.grey),
+          border: OutlineInputBorder(borderSide: BorderSide.none),
+          enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
+          errorBorder: OutlineInputBorder(borderSide: BorderSide.none),
+        ),
+      ),
+
       home: SplashScreen(),
     );
   }
